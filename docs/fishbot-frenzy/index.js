@@ -53,6 +53,22 @@ if (phaseTabs.length > 0 && phaseContents.length > 0) {
     });
 }
 
+const subteamTabs = document.querySelectorAll(".subteam-tab");
+const subteamContents = document.querySelectorAll(".subteam-category");
+
+console.log(subteamTabs);
+console.log(subteamContents);
+
+subteamTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+        subteamTabs.forEach((t) => t.classList.remove("active"));
+        subteamContents.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        subteamContents[index].classList.add("active");
+    });
+});
+
 // Simple initialization
 // createBubbles();
 // createOceanParticles();
